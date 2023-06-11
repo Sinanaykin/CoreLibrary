@@ -10,6 +10,9 @@ namespace FluentValidationApp.Web.FluentValidator
         {
             RuleFor(X=>X.Name).NotEmpty().WithMessage("NAME ALANI BOŞ GEÇİLEMEZ.");
             RuleFor(X => X.Email).EmailAddress().WithMessage("Email doğru format da değil");
+
+            RuleForEach(X => X.Address).SetValidator(new AddressValidator());   
+               
         }
 
     }
