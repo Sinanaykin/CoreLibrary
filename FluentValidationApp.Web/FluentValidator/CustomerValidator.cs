@@ -11,7 +11,8 @@ namespace FluentValidationApp.Web.FluentValidator
             RuleFor(X=>X.Name).NotEmpty().WithMessage("NAME ALANI BOŞ GEÇİLEMEZ.");
             RuleFor(X => X.Email).EmailAddress().WithMessage("Email doğru format da değil");
 
-            RuleForEach(X => X.Address).SetValidator(new AddressValidator());   
+            RuleForEach(X => X.Address).SetValidator(new AddressValidator());
+            RuleFor(x => x.Gender).IsInEnum().WithMessage(" erkek için 1 bayan  için 2 olmalıdır");
                
         }
 
