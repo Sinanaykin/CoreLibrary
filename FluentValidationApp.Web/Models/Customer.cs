@@ -1,11 +1,13 @@
-﻿namespace FluentValidationApp.Web.Models
+﻿using System.Collections.Generic;
+
+namespace FluentValidationApp.Web.Models
 {
-    public class Address
+    public class Customer
     {
         public int Id { get; set; }
-        public string Content { get; set; }
-        public string Province { get; set; }
-        public string PostCode { get; set; }
-        public virtual Customer Customer { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public int Age { get; set; }
+        public IList<Address> Address { get; set; }
     }
 }
