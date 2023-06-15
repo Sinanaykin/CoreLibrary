@@ -18,7 +18,7 @@ namespace FluentValidationApp.Web.Controllers
         public Customers1Controller(AppDbContext context, IValidator<Customer> customerValidator)
         {
             _context = context;
-            _customerValidator= customerValidator;
+            _customerValidator = customerValidator;
         }
 
         // GET: Customers1

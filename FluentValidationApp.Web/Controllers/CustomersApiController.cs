@@ -27,6 +27,18 @@ namespace FluentValidationApp.Web.Controllers
             _mapper = mapper;
         }
 
+
+        [Route("MappingOrnek")]
+        [HttpGet]
+        public IActionResult MappingOrnek()
+        {
+            Customer customers = new Customer { Id = 1, Name = "Sinan", Email = "asdasdasd@gmail.com", Age = 23 };
+
+
+            return Ok(_mapper.Map<CustomerDto>(customers));
+        }
+
+
         // GET: api/CustomersApi
         [HttpGet]
         public async Task<ActionResult<IList<CustomerDto>>> GetCustomers()
@@ -35,8 +47,12 @@ namespace FluentValidationApp.Web.Controllers
             return _mapper.Map<List<CustomerDto>>(customers);  
         }
 
-        // GET: api/CustomersApi/5
-        [HttpGet("{id}")]
+
+
+    
+
+    // GET: api/CustomersApi/5
+    [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
             var customer = await _context.Customers.FindAsync(id);
