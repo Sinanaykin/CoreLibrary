@@ -14,8 +14,8 @@ namespace FluentValidationApp.Web.Mapping
             //  eğer property isimleri farklı ise customer ve customerdto da farklı olan propertler aşağıdaki gibi mapleme  yapılır 
 
             CreateMap<Customer, CustomerDto>()
-                .ForMember(dest=>dest.Isım,opt=>opt.MapFrom(x=>x.Name))
-                .ForMember(dest => dest.Eposta, opt => opt.MapFrom(x => x.Email))
+                .ForMember(dest => dest.Isım, opt => opt.MapFrom(x => x.Name))
+                .ForMember(dest => dest.Eposta, opt => opt.MapFrom(x => x.Email));
         }
     }
 }
