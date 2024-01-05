@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using AspNetCoreRateLimit;
 
 namespace RateLimitt.API
 {
@@ -13,7 +15,12 @@ namespace RateLimitt.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            //appsetting deki verileri okumak için bu yapýyý kurduk .
+           //gidip appsetting içine bakýyor program il ayaga kalktýgýnda
+         var webPost= CreateHostBuilder(args).Build();
+            var IpPolicy = webPost.Services.GetRequiredService<IIpPolicyStore>();
+            IpPolicy.SeedAsync().Wait();//appsetting içindeki kurallarý uygulayacak  seed metodu
+            webPost.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
