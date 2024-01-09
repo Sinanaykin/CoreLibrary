@@ -18,8 +18,11 @@ namespace RateLimitt.API
             //appsetting deki verileri okumak için bu yapýyý kurduk .
            //gidip appsetting içine bakýyor program il ayaga kalktýgýnda
          var webPost= CreateHostBuilder(args).Build();
-            var IpPolicy = webPost.Services.GetRequiredService<IIpPolicyStore>();
-            IpPolicy.SeedAsync().Wait();//appsetting içindeki kurallarý uygulayacak  seed metodu
+
+            //Bunlarýda kapadýk client  id rate limit kullanmak için
+            //var IpPolicy = webPost.Services.GetRequiredService<IIpPolicyStore>();
+            //IpPolicy.SeedAsync().Wait();//appsetting içindeki kurallarý uygulayacak  seed metodu
+
             webPost.Run();
         }
 
