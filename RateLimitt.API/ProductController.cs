@@ -10,7 +10,7 @@ namespace RateLimitt.API
         [HttpGet]
         public IActionResult GetProduct()
         {
-            return Ok(new {Id=1,Name="Kalem",Price=10});
+            return Ok(new {Id=1,Name="Kalem",Price=20});
         }
         [HttpPost]
         public IActionResult SaveProduct()
@@ -23,6 +23,12 @@ namespace RateLimitt.API
         public IActionResult UpdateProduct()
         {
             return Ok();
+        }
+
+        [HttpGet("{name}/{price}")]
+        public IActionResult GetProduct(string name,int price)
+        {
+            return Ok(name);
         }
 
     }
