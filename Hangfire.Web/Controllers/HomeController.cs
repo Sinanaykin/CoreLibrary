@@ -26,6 +26,7 @@ namespace Hangfire.Web.Controllers
 
         public IActionResult Privacy()
         {
+            BackgroundJob.RecurringJob.ReportingJob();
             return View();
         }
 
