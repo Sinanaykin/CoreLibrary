@@ -1,3 +1,4 @@
+using Hangfire.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,7 +25,7 @@ namespace Hangfire.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddScoped<IEmailSender, EmailSender>();
             services.AddHangfire(config => config.UseSqlServerStorage(Configuration.GetConnectionString(name:"HangfireConnection")));//appsettingsdeki db yi okuyup db ye baðlansýn diye yaptýk bunu
             services.AddHangfireServer();//joblarý sqlserverdan çekecek ve iþleyecek
         }
