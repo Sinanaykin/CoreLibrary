@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,8 @@ namespace Logging
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly ILogger _logger;//startupý loglamak için bunu ekle
+        public Startup(IConfiguration configuration,ILogger<Startup> logger)
         {
             Configuration = configuration;
         }
@@ -23,6 +25,7 @@ namespace Logging
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            _logger.LogInformation("Servisler ayaða kalkýyor");//loglama
             services.AddControllersWithViews();
         }
 

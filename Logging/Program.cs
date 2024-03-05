@@ -20,7 +20,25 @@ namespace Logging
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>().ConfigureLogging(logging =>
+                    {
+
+                        logging.ClearProviders ();
+                    }) ;
                 });
+        //public static void Main(string[] args)
+        //{
+
+        //    var host = CreateHostBuilder(args).Build();
+        //    var logger = host.Services.GetRequiredService<ILogger<Program>>();//program.cs log koymak için bu yapýlýr.çünkü burada dependency ýnjection yapamayýz burda böyle loglanýr
+        //    logger.LogInformation("Uygulama ayaga kalkýyor");
+        //}
+
+        //public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //    Host.CreateDefaultBuilder(args)
+        //        .ConfigureWebHostDefaults(webBuilder =>
+        //        {
+        //            webBuilder.UseStartup<Startup>();
+        //        });
     }
 }
