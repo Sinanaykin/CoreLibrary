@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Web", "Hangfire.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling", "ErrorHandling\ErrorHandling.csproj", "{791D4D8A-F9F2-4463-B786-A75F564F3D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{426E068E-53EA-4C22-82BF-4D5780BDA57D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "Logging\Logging.csproj", "{426E068E-53EA-4C22-82BF-4D5780BDA57D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOGGING-NLOG", "LOGGING-NLOG\LOGGING-NLOG.csproj", "{85D2FA36-DF9E-4C1C-A21C-AF3ED4BCA8B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{426E068E-53EA-4C22-82BF-4D5780BDA57D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{426E068E-53EA-4C22-82BF-4D5780BDA57D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{426E068E-53EA-4C22-82BF-4D5780BDA57D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D2FA36-DF9E-4C1C-A21C-AF3ED4BCA8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D2FA36-DF9E-4C1C-A21C-AF3ED4BCA8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D2FA36-DF9E-4C1C-A21C-AF3ED4BCA8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D2FA36-DF9E-4C1C-A21C-AF3ED4BCA8B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
